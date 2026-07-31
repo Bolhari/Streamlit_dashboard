@@ -4,21 +4,21 @@ import pandas as pd
 # -----------------------
 # Page title
 # -----------------------
-st.set_page_config(page_title="Student Dashboard", layout="wide")
+st.set_page_config(page_title="Sample Dashboard", layout="wide")
 
-st.title("📊 Big Data Analytics Dashboard")
+st.title("📊 Very Early Sample Dashboard")
 
 st.write("This is a simple Streamlit dashboard.")
 
 # -----------------------
 # Read CSV
 # -----------------------
-df = pd.read_csv("students.csv")
+df = pd.read_csv("employees.csv")
 
 # -----------------------
 # Show data
 # -----------------------
-st.header("Student Data")
+st.header("Employee Data")
 
 st.dataframe(df)
 
@@ -37,7 +37,7 @@ st.metric("Average Score", round(df["Score"].mean(),1))
 # -----------------------
 # Bar chart
 # -----------------------
-st.header("Student Scores")
+st.header("Employee Scores")
 
 st.bar_chart(df.set_index("Name")["Score"])
 
@@ -56,7 +56,7 @@ st.write(filtered)
 # -----------------------
 # Pie chart
 # -----------------------
-st.header("Students per Course")
+st.header("Employees per Course")
 
 course_counts = df["Course"].value_counts()
 
